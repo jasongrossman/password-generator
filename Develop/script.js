@@ -1,4 +1,4 @@
-// Assignment Code
+// Variable Assignment Code
 var generateBtn = document.querySelector("#generate");
 var lengthCriteria = "";
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -11,16 +11,14 @@ var selectedCharacters = "";
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  
   passwordText.value = password;
-
   }
 
 //generatePassword Function
   var generatePassword = function() {
   
- //clear selectedCharacters so that password generator can be re-used with new criteria
-  selectedCharacters = "";
+  //clear selectedCharacters so that password generator can be re-used with new criteria
+    selectedCharacters = "";
 
   //password length prompt. Pass user response into length.Criteria. If outside length parameters, give error message and re-prompt.
   var lengthCriteria = window.prompt("How many characters should be in your password? (must be between 8-128");
@@ -40,7 +38,6 @@ function writePassword() {
     }
     else {
       console.log("no lower case");
-      var lowerCaseCriteria = "";
     }
 
   //password character type prompt (uppercase). If confirmed, add it to selectedCharacters, if not, do not add.
@@ -51,8 +48,8 @@ function writePassword() {
     }
     else {
       console.log("no uppercase");
-      var upperCaseCriteria = "";
     }
+
   //password character type prompt (numeric). If confirmed, add it to selectedCharacters, if not, do not add.
     var numericCriteria = window.confirm("Do you want your password to contain numbers?");
     if (numericCriteria === true) {
@@ -61,7 +58,6 @@ function writePassword() {
     }
     else {
       console.log("no numbers");
-      var numericCriteria = "";
     }
 
   //password character type prompt (special characters). If confirmed, add it to selectedCharacters, if not, do not add. 
@@ -72,7 +68,6 @@ function writePassword() {
     }
     else {
       console.log("no special characters");
-      var specialCharCriteria = "";
     }
    
     //confirm user character choices. Use var selectedCharacters for password generation
@@ -89,7 +84,6 @@ function writePassword() {
 
     //return passwordOutput value so it can be passed to HTML element id #password
     return passwordOutput;
-    
    }    
 
 // Add event listener to generate button
