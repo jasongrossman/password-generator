@@ -13,3 +13,6 @@ User can generate a uniquely random password. To do so, they must:
 * Answer prompts for whether or not they want to include uppercase, lowercase, numeric, or special characters in their password.
 * User must select at least one type of character in order to generate a password, or they will be cycled back to the beginning of the prompts.
 * Password displays in output box for user to copy and paste.
+
+EX:
+![password generator demo](./assets/sample.png)
