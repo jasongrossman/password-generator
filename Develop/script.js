@@ -17,8 +17,9 @@ function writePassword() {
 //generatePassword Function
   var generatePassword = function() {
   
-  //clear selectedCharacters so that password generator can be re-used with new criteria
+  //clear prompt values so that password generator can be re-used with new criteria
     selectedCharacters = "";
+    lengthCriteria = "";
 
   //password length prompt. Pass user response into length.Criteria. If outside length parameters, give error message and re-prompt.
   var lengthCriteria = window.prompt("How many characters should be in your password? (must be between 8-128");
@@ -69,7 +70,13 @@ function writePassword() {
     else {
       console.log("no special characters");
     }
-   
+
+    //ensure at least one type of characters were selected, or else restart criteria prompts.
+    if (!selectedCharacters) {
+      alert("No character types were selected. Please start over and select at least one character type.");
+      generatePassword();
+    }
+
     //confirm user character choices. Use var selectedCharacters for password generation
     console.log("These characters can be randomly selected for the password: " + selectedCharacters);
     
@@ -85,6 +92,7 @@ function writePassword() {
     //return passwordOutput value so it can be passed to HTML element id #password
     return passwordOutput;
    }    
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
