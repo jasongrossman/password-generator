@@ -15,4 +15,5 @@ User can generate a uniquely random password. To do so, they must:
 * Password displays in output box for user to copy and paste.
 
 EX:
-![password generator demo](./assets/sample.png)
+![password generator demo](./Assets/sample.png)
+![password generator demo](./Assets/03-javascript-homework-demo.png)
