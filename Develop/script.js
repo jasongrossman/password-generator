@@ -32,7 +32,7 @@ function writePassword() {
       generatePassword();
     }
 
-  //password character type prompt (lowercase). If confirmed, add it to the password criteria, if not, do not add.
+  //password character type prompt (lowercase). If confirmed, add it to selectedCharacters, if not, do not add.
     var lowerCaseCriteria = window.confirm("Do you want your password to contain lowercase letters?");
     if (lowerCaseCriteria === true) {
       console.log("yes, include lowercase");
@@ -43,7 +43,7 @@ function writePassword() {
       var lowerCaseCriteria = "";
     }
 
-  //password character type prompt (uppercase). If confirmed, add it to the password criteria, if not, do not add.
+  //password character type prompt (uppercase). If confirmed, add it to selectedCharacters, if not, do not add.
     var upperCaseCriteria = window.confirm("Do you want your password to contain uppercase letters?");
     if (upperCaseCriteria === true) {
       console.log("yes, include uppercase");
@@ -53,7 +53,7 @@ function writePassword() {
       console.log("no uppercase");
       var upperCaseCriteria = "";
     }
-  //password character type prompt (numeric). If confirmed, add it to the password criteria, if not, do not add.
+  //password character type prompt (numeric). If confirmed, add it to selectedCharacters, if not, do not add.
     var numericCriteria = window.confirm("Do you want your password to contain numbers?");
     if (numericCriteria === true) {
       console.log("yes, include numbers"); 
@@ -64,7 +64,7 @@ function writePassword() {
       var numericCriteria = "";
     }
 
-  //password character type prompt (special characters). If confirmed, add it to the password criteria, if not, do not add. 
+  //password character type prompt (special characters). If confirmed, add it to selectedCharacters, if not, do not add. 
     var specialCharCriteria = window.confirm("Do you want your password to include special characters such as '!' or '#'?");
     if (specialCharCriteria === true) {
       console.log("yes, include special characters");
@@ -74,10 +74,11 @@ function writePassword() {
       console.log("no special characters");
       var specialCharCriteria = "";
     }
-
    
     //confirm user character choices. Use var selectedCharacters for password generation
     console.log("These characters can be randomly selected for the password: " + selectedCharacters);
+    
+    //create variable to store output from loop function
     var passwordOutput = "";
 
     //loop function to randomly choose characters from selectedCharacters until lengthCriteria # of characters are generated.
@@ -85,8 +86,9 @@ function writePassword() {
       var randomCharacter = selectedCharacters[Math.floor(Math.random()*selectedCharacters.length)];
       passwordOutput += randomCharacter;
     }
-    console.log(passwordOutput);
-    return passwordOutput
+
+    //return passwordOutput value so it can be passed to HTML element id #password
+    return passwordOutput;
     
    }    
 
